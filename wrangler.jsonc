@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "banco_el-melon",
+          "database_id": "c4f8a3bc-dfbb-4fb7-892b-8945a6ba637e"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "6725fad7c80d40eba605edcc5e4b78ae",
+            "binding": "SECRET",
+            "secret_name": "BD_D1_SECRET"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
